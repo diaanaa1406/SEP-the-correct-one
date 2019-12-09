@@ -64,4 +64,17 @@ public class Course
   {
     return teachers.size();
   }
+  public void addTeacher(Teacher teacher)
+  {
+    teachers.add(teacher);
+  }
+  public void removeTeacher(Teacher teacher)
+  {
+    teachers.remove(teacher);
+  }
+  public String[] getAllTeachers()
+  {
+    String[] temp = new String[teachers.size()];
+    return teachers.toArray(temp);
+  }
 }
