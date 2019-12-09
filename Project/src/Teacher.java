@@ -4,11 +4,11 @@ public class Teacher
 {
   private String name;
   private String initial;
-  private ArrayList<DateInterval> availability;
+  private ArrayList<MyDate> availability;
   public Teacher(String name, String initial)
   {
     try{
-      availability=new ArrayList<DateInterval>();
+      availability=new ArrayList<MyDate>();
       this.initial=initial;
       this.name=name;
     }
@@ -25,11 +25,11 @@ public class Teacher
   {
     this.initial=initial;
   }
-  public void addAvailability(DateInterval dateInterval)
+  public void addAvailability(MyDate dateInterval)
   {
     availability.add(dateInterval);
   }
- public void removeAvailability(DateInterval dateInterval)
+ public void removeAvailability(MyDate dateInterval)
  {
    availability.remove(dateInterval);
  }
@@ -43,7 +43,7 @@ public class Teacher
     return name;
   }
 
-  public DateInterval getAvailability(int index)
+  public MyDate getAvailability(int index)
   {
     return availability.get(index);
   }
