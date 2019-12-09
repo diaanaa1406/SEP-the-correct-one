@@ -1,5 +1,9 @@
+import java.awt.event.WindowStateListener;
+import java.util.ArrayList;
+
 public class Course
 {
+  private ArrayList<Teacher> teachers;
   private String name;
   private String id;
   private int numberOfStudents;
@@ -42,5 +46,22 @@ public class Course
   public String getTypeOfExam()
   {
     return typeOfExam;
+  }
+  public String toString()
+  {
+    return "Name: " + name + ", ID: " + ",  Nr. of students: " + numberOfStudents + ", Type of exam: " + typeOfExam;
+  }
+  public boolean equals(Object obj)
+  {
+    if(!(obj instanceof Course))
+    {
+      return false;
+    }
+    Course temp = (Course) obj;
+    return name.equals(temp.name) && id.equals(temp.id) && numberOfStudents == temp.numberOfStudents && typeOfExam.equals(temp.typeOfExam);
+  }
+  public int getNumberOfTeachers()
+  {
+    return teachers.size();
   }
 }
