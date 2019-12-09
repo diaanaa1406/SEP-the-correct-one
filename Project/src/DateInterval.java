@@ -1,3 +1,4 @@
+/*
 public class DateInterval
 {
   private MyDate startDate;
@@ -37,3 +38,4 @@ public class DateInterval
     return "Start Date:"+startDate+"\n"+"End Date:"+endDate;
   }
 }
+*/
