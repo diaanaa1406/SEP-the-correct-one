@@ -52,5 +52,18 @@ public Exam(){}
     {Str += teachers.get(i);}
     return Str;
   }
+
+  public boolean equals(Object obj){
+  if(!(obj instanceof Exam)){return false;}
+  Exam other = (Exam)obj;
+  boolean sameteachers = true;
+  for (int i=0; i<teachers.size();i++){if(!(teachers.get(i).equals(other.teachers.get(i)))){sameteachers = false;}}
+  return other.type.equals(type) && other.course.equals(course) && other.classroom.equals(classroom) &&
+      other.date.equals(date) && other.startTime.equals(startTime) && other.endTime.equals(endTime) && sameteachers;
+  }
+
+  public String toString(){
+  return type+date+startTime+endTime+classroom+course+getAllTeachers();
+  }
 }
 
