@@ -69,4 +69,15 @@ public class MyDate
   {
     return year;
   }
+  public boolean equals(Object obj)
+  {
+    if(!(obj instanceof MyDate))
+      return false;
+    MyDate other=(MyDate)obj;
+    return day==other.day&&month==other.month&&year==other.year;
+  }
+  public String toString()
+  {
+    return day+"."+month+"."+year;
+  }
 }
