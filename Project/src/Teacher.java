@@ -52,7 +52,10 @@ public class Teacher
     if(!(obj instanceof Teacher))
       return false;
     Teacher other=(Teacher)obj;
-    return name.equals(other.name)&&initial.equals(other.initial)&&availability.equals(other.availability);
+    for(int i=0;i<availability.size();i++)
+      if(!(availability.get(i).equals(other.availability.get(i))))
+        return false;
+    return name.equals(other.name)&&initial.equals(other.initial);
   }
   public String toString()
   {
