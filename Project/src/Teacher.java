@@ -1,13 +1,14 @@
 import java.util.InputMismatchException;
+import java.util.ArrayList;
 public class Teacher
 {
   private String name;
   private String initial;
-  private DateInterval availability;
-  public Teacher(String name, String initial, DateInterval availability)
+  private ArrayList<DateInterval> availability;
+  public Teacher(String name, String initial)
   {
     try{
-      this.availability=availability;
+      availability=new ArrayList<DateInterval>();
       this.initial=initial;
       this.name=name;
     }
@@ -20,16 +21,19 @@ public class Teacher
   {
     this.name=name;
   }
-  public void setIntial(String initial)
+  public void setInitial(String initial)
   {
     this.initial=initial;
   }
-  public void setAvailability(DateInterval availability)
+  public void addAvailability(DateInterval dateInterval)
   {
-    this.availability=availability;
+    availability.add(dateInterval);
   }
-
-  public String getIntial()
+ public void removeAvailability(DateInterval dateInterval)
+ {
+   availability.remove(dateInterval);
+ }
+  public String getInitial()
   {
     return initial;
   }
@@ -39,19 +43,26 @@ public class Teacher
     return name;
   }
 
-  public DateInterval getAvailability()
+  public DateInterval getAvailability(int index)
   {
-    return availability;
+    return availability.get(index);
   }
   public boolean equals(Object obj)
   {
     if(!(obj instanceof Teacher))
       return false;
     Teacher other=(Teacher)obj;
-    return name.equals(other.name)&&initial.equals(other.initial)&&availability.equals(other.availability);
+    for(int i=0;i<availability.size();i++)
+      if(!(availability.get(i).equals(other.availability.get(i))))
+        return false;
+    return name.equals(other.name)&&initial.equals(other.initial);
   }
   public String toString()
   {
-    return name+" "+initial+" "+availability;
+    String s="";
+    for(int i=0;i<availability.size();i++)
+      s=s+availability.get(i)+" ";
+     s=name+" "+initial+" ";
+     return s;
   }
 }
