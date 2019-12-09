@@ -69,6 +69,8 @@ public class MyDate
   {
     return year;
   }
+
+
   public boolean equals(Object obj)
   {
     if(!(obj instanceof MyDate))
