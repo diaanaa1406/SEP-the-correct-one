@@ -15,7 +15,7 @@ public class Schedule
 
   public void removeExam(Exam exam){
     for(int i=0;i<exams.size();i++){
-      if (exams.get(i).equals(exam)){exams.remove(i)};
+      if (exams.get(i).equals(exam)){exams.remove(i);};
     }
   }
 
