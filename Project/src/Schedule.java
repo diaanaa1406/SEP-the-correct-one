@@ -6,11 +6,25 @@ public class Schedule
   private ArrayList<Exam> exams;
 
   public Schedule(){
-
-  }
+    try
+    {
+      exams = new ArrayList<Exam>();
+    }
+    catch (InputMismatchException e)
+    {
+      System.out.println("Incorrect input");
+    }
+    }
 
   public void addExam(Exam exam){
+  try
+  {
     exams.add(exam);
+  }
+    catch (InputMismatchException e)
+  {
+    System.out.println("That is not an exam");
+  }
   }
 
   public void removeExam(Exam exam){
