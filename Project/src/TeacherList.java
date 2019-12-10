@@ -5,6 +5,10 @@ public class TeacherList
 {
 
   private ArrayList<Teacher> teachers;
+  public TeacherList()
+  {
+    teachers = new ArrayList<Teacher>();
+  }
 
   public int getNumberOfTeachers(){return teachers.size();}
 
