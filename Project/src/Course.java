@@ -1,4 +1,3 @@
-import java.awt.event.WindowStateListener;
 import java.util.ArrayList;
 
 public class Course
