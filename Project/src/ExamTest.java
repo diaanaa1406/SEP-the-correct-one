@@ -1,8 +1,10 @@
 public class ExamTest
 //file to see if everything is working well. -Javier
 {
-  public static void main(String[] args){
-  /* MyDate d = new MyDate(3, 3, 3);
+  public static void main(String[] args)
+  {
+
+    /* MyDate d = new MyDate(3, 3, 3);
   Teacher t = new Teacher("Alan", "A");
   Course co = new Course("a", "b", t, 33, "c");
   Classroom cl = new Classroom("a", 2, true, 4);
