@@ -1,10 +1,21 @@
 import java.util.InputMismatchException;
 import java.util.ArrayList;
 public class Teacher
+    /**
+     *
+     * @author
+     * @version
+     */
 {
   private String name;
   private String initial;
   private ArrayList<MyDate> availability;
+
+  /**
+   *
+   * @param name the name of the teacher
+   * @param initial
+   */
   public Teacher(String name, String initial)
   {
     try{
