@@ -36,7 +36,7 @@ public class Schedule
   public String getAllExams(){
     String Str = "";
     for (int i=0;i<exams.size();i++)
-    {Str += exams.get(i);}
+    {Str += "\n"+exams.get(i);}
     return Str;
   }
 }

@@ -5,6 +5,10 @@ public class TeacherList
 {
 
   private ArrayList<Teacher> teachers;
+  public TeacherList()
+  {
+    teachers = new ArrayList<Teacher>();
+  }
 
   public int getNumberOfTeachers(){return teachers.size();}
 
@@ -21,11 +25,9 @@ public class TeacherList
     }
   }
 
-  public String getAllTeachers(){
-    String Str = "";
-    for (int i=0;i<teachers.size();i++)
-    {Str += teachers.get(i);}
-    return Str;
+  public String[] getAllTeachers(){
+    String[] temp = new String[teachers.size()];
+    return teachers.toArray(temp);
   }
 
   public boolean equals(Object obj) {

@@ -6,47 +6,39 @@ private String type;
 private MyDate date;
 private Clock startTime;
 private Clock endTime;
-private Classroom classroom;
+private ClassroomList classroomList;
 private CourseList courseList;
-private Course course;
 private TeacherList teacherList;
 
-public Exam(){}
+public Exam(String type, MyDate date, Clock startTime, Clock endTime, ClassroomList classroomList, CourseList courseList, TeacherList tl){
 
-  public String getType()
-  {
-    return type;
-  }
+    try{this.type = type;}
+    catch(InputMismatchException e){System.out.println("incorrect input");}
+    try{this.date = date;}
+    catch(InputMismatchException e){System.out.println("incorrect input");}
+    try{this.startTime = startTime;}
+    catch(InputMismatchException e){System.out.println("incorrect input");}
+    try{this.endTime = endTime;}
+    catch(InputMismatchException e){System.out.println("incorrect input");}
+    try{this.classroomList = classroomList;}
+    catch(InputMismatchException e){System.out.println("incorrect input");}
+    try{this.courseList = courseList;}
+    catch(InputMismatchException e){System.out.println("incorrect input");}
+    try{teacherList = tl;}
+    catch(InputMismatchException e){System.out.println("incorrect input");}
+}
 
-  public MyDate getDate()
-  {
-    return date;
-  }
+  public String getType() { return type; }
 
-  public Clock getStartTime()
-  {
-    return startTime;
-  }
+  public MyDate getDate() { return date; }
 
-  public Clock getEndTime()
-  {
-    return endTime;
-  }
+  public Clock getStartTime() { return startTime; }
 
-  public Classroom getClassroom()
-  {
-    return classroom;
-  }
+  public Clock getEndTime() { return endTime; }
 
-  public Course getCourse()
-  {
-    return course;
-  }
+  public ClassroomList getClassroomList() { return classroomList; }
 
-  public TeacherList getTeacherList()
-  {
-    return teacherList;
-  }
+  public TeacherList getTeacherList() { return teacherList; }
 
   public void setType(String type){
     try{this.type = type;}
@@ -58,13 +50,13 @@ public Exam(){}
     try{startTime = clock;}
     catch(InputMismatchException e){System.out.println("incorrect input");} }
   public void setEndTime(Clock clock){
-    try{startTime = clock;}
+    try{endTime = clock;}
     catch(InputMismatchException e){System.out.println("incorrect input");} }
-  public void setClassroom(Classroom classroom){
-    try{this.classroom = classroom;}
+  public void setClassroom(ClassroomList classroomList){
+    try{this.classroomList = classroomList;}
     catch(InputMismatchException e){System.out.println("incorrect input");} }
-  public void setCourse(Course course){
-    try{this.course = course;}
+  public void setCourse(CourseList courseList){
+    try{this.courseList = courseList;}
     catch(InputMismatchException e){System.out.println("incorrect input");} }
   public void setTeacherList(TeacherList tl){
     try{teacherList = tl;}
@@ -75,12 +67,13 @@ public Exam(){}
   public boolean equals(Object obj){
   if(!(obj instanceof Exam)){return false;}
   Exam other = (Exam)obj;
-  return other.type.equals(type) && other.course.equals(course) && other.classroom.equals(classroom) &&
-      other.date.equals(date) && other.startTime.equals(startTime) && other.endTime.equals(endTime) && other.teacherList.equals(teacherList);
+  return other.type.equals(type) && other.courseList.equals(courseList) && other.classroomList.equals(classroomList) &&
+      other.date.equals(date) && other.startTime.equals(startTime) && other.endTime.equals(endTime) &&
+      other.teacherList.equals(teacherList) && other.courseList.equals(courseList);
   }
 
   public String toString(){
-  return type+date+startTime+endTime+classroom+course+teacherList;
+  return "type: "+type+"\n date: "+date+"\n startTime: "+startTime+"\n endTime: "+endTime+"\n clasroomList: "+classroomList.getAllClassrooms()+"\n courseList: "+courseList.getAllCourse()+"\n teacherList: "+teacherList.getAllTeachers();
   }
 }
 
