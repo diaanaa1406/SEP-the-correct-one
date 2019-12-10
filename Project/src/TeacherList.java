@@ -24,7 +24,7 @@ public class TeacherList
   public String getAllTeachers(){
     String Str = "";
     for (int i=0;i<teachers.size();i++)
-    {Str += teachers.get(i);}
+    {Str += "\n"+teachers.get(i);}
     return Str;
   }
 

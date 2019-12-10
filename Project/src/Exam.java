@@ -73,7 +73,7 @@ public Exam(String type, MyDate date, Clock startTime, Clock endTime, ClassroomL
   }
 
   public String toString(){
-  return type+date+startTime+endTime+classroomList+courseList+teacherList+courseList;
+  return "type: "+type+"\n date: "+date+"\n startTime: "+startTime+"\n endTime: "+endTime+"\n clasroomList: "+classroomList+"\n courseList: "+courseList+"\n teacherList: "+teacherList+courseList;
   }
 }
 
