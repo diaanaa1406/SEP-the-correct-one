@@ -21,11 +21,9 @@ public class TeacherList
     }
   }
 
-  public String getAllTeachers(){
-    String Str = "";
-    for (int i=0;i<teachers.size();i++)
-    {Str += "\n"+teachers.get(i);}
-    return Str;
+  public String[] getAllTeachers(){
+    String[] temp = new String[teachers.size()];
+    return teachers.toArray(temp);
   }
 
   public boolean equals(Object obj) {
