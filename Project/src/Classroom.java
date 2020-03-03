@@ -4,6 +4,7 @@ import java.util.InputMismatchException;
   public class Classroom
   {
     private String number;
+    private int whatever;
     private int numberOfSeats;
     private boolean projector;
     private int numberOfSockets;
